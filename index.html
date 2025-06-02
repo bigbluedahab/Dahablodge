@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dahab Lodge Pro - Hotel Management</title>
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#2563EB" /> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#2563EB',       // Tailwind blue-600 (was lodge-blue)
+              'primary-dark': '#1D4ED8',  // Tailwind blue-700
+              'secondary': '#F97316',     // Tailwind orange-500 (for ctas, alerts)
+              'secondary-dark': '#EA580C',// Tailwind orange-600
+              'accent': '#F59E0B',        // Tailwind amber-500 (was lodge-gold, for highlights)
+              'accent-dark': '#D97706',   // Tailwind amber-600
+              
+              'neutral-base': '#FFFFFF',    // White
+              'neutral-light': '#F8FAFC',  // Tailwind slate-50 (app background, card backgrounds)
+              'neutral-container': '#FFFFFF', // White for main content containers/cards
+              'neutral-border': '#E2E8F0', // Tailwind slate-200 (borders, dividers)
+              'neutral-muted': '#94A3B8',  // Tailwind slate-400 (muted text, icons)
+              'neutral-text': '#334155',   // Tailwind slate-700 (general text)
+              'neutral-text-heading': '#1E293B', // Tailwind slate-800 (headings)
+
+              // Legacy colors (can be phased out or mapped)
+              'lodge-blue': '#2563EB', // Mapped to primary
+              'lodge-gold': '#F59E0B', // Mapped to accent
+              'lodge-stone': '#334155', // Mapped to neutral-text
+              'lodge-sand': '#F8FAFC', // Mapped to neutral-light
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@/constants": "./constants.tsx"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-neutral-light"> 
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./service-worker.js')
+            .then((registration) => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch((error) => {
+              console.log('ServiceWorker registration failed: ', error);
+            });
+        });
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

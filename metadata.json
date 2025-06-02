@@ -1,0 +1,6 @@
+{
+  "name": "Dahab Lodge - Hotel Management",
+  "description": "A simple hotel management application to track room bookings, status, and revenue. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
